@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Assignment Planner</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <h2>Study<span>Plan.</span></h2>
+        </div>
+
+        <nav>
+          <a href="#dashboard" class="nav-link active">Dashboard</a>
+          <a href="#assignments" class="nav-link">My Assignments</a>
+          <a href="#add-assignment" class="nav-link">Add Assignment</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p>Student Assignment Planner</p>
+          <small>Stay organised. Stay ahead.</small>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- HEADER -->
+        <header class="topbar">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Keep track of your academic responsibilities.</p>
+          </div>
+
+          <div class="date-display" id="currentDate"></div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard">
+          <div class="welcome-card">
+            <div>
+              <h2>Welcome to your planner!</h2>
+              <p>Organise your assignments and keep track of your deadlines.</p>
+            </div>
+          </div>
+
+          <!-- STATISTICS -->
+          <div class="stats-container">
+            <div class="stat-card">
+              <p>Total Assignments</p>
+              <h2 id="totalAssignments">0</h2>
+            </div>
+
+            <div class="stat-card">
+              <p>Pending</p>
+              <h2 id="pendingAssignments">0</h2>
+            </div>
+
+            <div class="stat-card">
+              <p>Completed</p>
+              <h2 id="completedAssignments">0</h2>
+            </div>
+          </div>
+        </section>
+
+        <!-- ADD ASSIGNMENT -->
+        <section id="add-assignment" class="content-section">
+          <div class="section-heading">
+            <h2>Add a New Assignment</h2>
+            <p>Enter the details of your academic task below.</p>
+          </div>
+
+          <form id="assignmentForm">
+            <div class="form-group">
+              <label for="assignmentName">Assignment Name</label>
+              <input
+                type="text"
+                id="assignmentName"
+                placeholder="e.g. Database Project"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="moduleName">Module</label>
+              <input
+                type="text"
+                id="moduleName"
+                placeholder="e.g. DATA6222w"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="dueDate">Due Date</label>
+              <input type="date" id="dueDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="priority">Priority</label>
+              <select id="priority" required>
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status" required>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="workload">Estimated Workload (Hours)</label>
+              <input
+                type="number"
+                id="workload"
+                min="1"
+                placeholder="e.g. 5"
+                required
+              />
+            </div>
+
+            <button type="submit" id="submitButton">Add Assignment</button>
+
+            <button
+              type="button"
+              id="cancelEdit"
+              class="secondary-button"
+              hidden
+            >
+              Cancel Edit
+            </button>
+          </form>
+        </section>
+
+        <!-- ASSIGNMENT LIST -->
+        <section id="assignments" class="content-section">
+          <div class="section-heading">
+            <h2>My Assignments</h2>
+            <p>View, update and manage your academic tasks.</p>
+          </div>
+
+          <!-- SEARCH AND FILTER -->
+          <div class="filter-container">
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search assignments..."
+              aria-label="Search assignments"
+            />
+            <div class="filter-container">
+            <select id="statusFilter" aria-label="Filter assignments by status">
+              <option value="All">All Statuses</option>
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+
+          <!-- ASSIGNMENT CARDS WILL APPEAR HERE -->
+          <div id="assignmentList" class="assignment-list" aria-live="polite">
+            <p class="empty-message">
+              No assignments yet. Add your first assignment above!
+            </p>
+          </div>
+        </section>
+
+        <!-- NOTIFICATION MESSAGE -->
+        <div
+          id="notification"
+          class="notification"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <footer>
+          <p>Student Assignment Planner | Academic Organisation Made Simple</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
