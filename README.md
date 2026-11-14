@@ -110,6 +110,10 @@ VISUAL CONTENT
 <img width="1040" height="375" alt="Screenshot 2026-11-14 223506" src="https://github.com/user-attachments/assets/271999d9-8e64-4670-9104-b5eba6bf1215" />
 
 
+<img width="1346" height="761" alt="Screenshot 2026-11-14 231342" src="https://github.com/user-attachments/assets/e14129b3-d921-4f71-8a0e-5b32ae673484" />
+
+
+
 <img width="1052" height="382" alt="Screenshot 2026-11-14 223536" src="https://github.com/user-attachments/assets/1925bdf4-d513-4299-9401-1742f9aba919" />
 
 
