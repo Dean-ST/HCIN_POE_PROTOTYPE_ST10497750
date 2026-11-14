@@ -11,8 +11,8 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(207, 207, 171);
-  color: #263247;
+  background-color: #F4F0E8;
+  color: #34332E;
 }
 
 /* MAIN LAYOUT */
@@ -24,7 +24,7 @@ body {
 /* SIDEBAR */
 .sidebar {
   width: 250px;
-  background-color: #22221e;
+  background-color: #30302A;
   color: white;
   padding: 30px 20px;
   display: flex;
@@ -42,7 +42,7 @@ body {
 }
 
 .logo span {
-  color: rgb(207, 207, 171);
+  color: #B7C2A8;
 }
 
 .sidebar nav {
@@ -61,7 +61,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  background-color: #434b3b;
+  background-color: #626F55;
   color: white;
 }
 
@@ -98,13 +98,13 @@ body {
 }
 
 .date-display {
-  color: #52627a;
+  color: #626F55;
   font-weight: bold;
 }
 
 /* WELCOME CARD */
 .welcome-card {
-  background: linear-gradient(120deg, #e5ded2, #22221e);
+  background: linear-gradient(120deg, #78866B, #30302A);
   color: white;
   padding: 30px;
   border-radius: 12px;
@@ -129,26 +129,26 @@ body {
 }
 
 .stat-card {
-  background-color: white;
+  background-color: #FFFDF8;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
 }
 
 .stat-card p {
-  color: #778397;
+  color: #77736B;
   font-size: 14px;
   margin-bottom: 12px;
 }
 
 .stat-card h2 {
   font-size: 30px;
-  color: #2459a6;
+  color: #626F55;
 }
 
 /* CONTENT SECTIONS */
 .content-section {
-  background-color: white;
+  background-color: #FFFDF8;
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -186,25 +186,25 @@ input,
 select {
   width: 100%;
   padding: 12px;
-  border: 1px solid #dce2eb;
+  border: 1px solid #D8D0C3;
   border-radius: 7px;
-  background-color: white;
+  background-color: #FFFDF8;
   font-size: 14px;
-  color: #263247;
+  color: #34332E;
 }
 
 input:focus,
 select:focus,
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid #8abaff;
+  outline: 3px solid #78866B;
   outline-offset: 2px;
 }
 
 /* BUTTONS */
 button {
   border: none;
-  background-color: #22221e;
+  background-color: #30302A;
   color: white;
   padding: 13px 20px;
   border-radius: 7px;
@@ -215,15 +215,15 @@ button {
 }
 
 button:hover {
-  background-color: #434b3b;
+  background-color: #626F55;
 }
 
 .secondary-button {
-  background-color: #778397;
+  background-color: #858078;
 }
 
 .secondary-button:hover {
-  background-color: #596579;
+  background-color: #626F55;
 }
 
 button[hidden] {
@@ -249,7 +249,7 @@ button[hidden] {
 }
 
 .assignment-card {
-  border: 1px solid #e3e8f0;
+  border: 1px solid #E5DED2;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -263,7 +263,7 @@ button[hidden] {
 }
 
 .assignment-info p {
-  color: #778397;
+  color: #77736B;
   font-size: 13px;
   margin-bottom: 6px;
 }
@@ -324,7 +324,7 @@ button[hidden] {
 /* EMPTY MESSAGE */
 .empty-message {
   text-align: center;
-  color: #778397;
+  color: #77736B;
   padding: 30px;
 }
 
@@ -333,7 +333,7 @@ button[hidden] {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background-color: #17243b;
+  background-color: #30302A;
   color: white;
   padding: 15px 22px;
   border-radius: 8px;
@@ -349,8 +349,44 @@ button[hidden] {
 footer {
   text-align: center;
   padding: 20px;
-  color: #778397;
+  color: #77736B;
   font-size: 12px;
+}
+
+/* SMART DEADLINE TRACKER */
+.deadline-panel {
+  background: #FFFDF8;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.deadline-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.deadline-item {
+  background: #F4F0E8;
+  border: 1px solid #E5DED2;
+  border-left: 4px solid #78866B;
+  border-radius: 9px;
+  padding: 15px;
+}
+
+.deadline-item h3 { font-size: 15px; margin-bottom: 7px; }
+.deadline-item p { color: #77736B; font-size: 13px; margin-bottom: 6px; }
+.deadline-label { display: inline-block; margin-top: 5px; padding: 5px 9px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+.deadline-safe { background: #E3EBDD; color: #40563A; }
+.deadline-soon { background: #F8EACB; color: #76520B; }
+.deadline-today { background: #F6DDC5; color: #81451A; }
+.deadline-overdue { background: #F4DADA; color: #8B2929; }
+.deadline-completed { background: #E3EBDD; color: #40563A; }
+
+@media (max-width: 900px) {
+  .deadline-overview { grid-template-columns: 1fr; }
 }
 
 /* RESPONSIVE DESIGN */

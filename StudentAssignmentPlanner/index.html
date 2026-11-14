@@ -66,6 +66,17 @@
               <h2 id="completedAssignments">0</h2>
             </div>
           </div>
+
+          <!-- SMART DEADLINE TRACKER -->
+          <div class="deadline-panel">
+            <div class="section-heading">
+              <h2>Smart Deadline Tracker</h2>
+              <p>Keep an eye on the assignments that need your attention.</p>
+            </div>
+            <div id="deadlineOverview" class="deadline-overview" aria-live="polite">
+              <p class="empty-message">Your upcoming deadlines will appear here.</p>
+            </div>
+          </div>
         </section>
 
         <!-- ADD ASSIGNMENT -->
@@ -158,7 +169,6 @@
               placeholder="Search assignments..."
               aria-label="Search assignments"
             />
-            <div class="filter-container">
             <select id="statusFilter" aria-label="Filter assignments by status">
               <option value="All">All Statuses</option>
               <option value="Not Started">Not Started</option>

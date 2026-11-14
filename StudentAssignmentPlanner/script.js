@@ -15,6 +15,7 @@ const searchInput = document.getElementById("searchInput");
 const statusFilter = document.getElementById("statusFilter");
 
 const notification = document.getElementById("notification");
+const deadlineOverview = document.getElementById("deadlineOverview");
 
 const submitButton = document.getElementById("submitButton");
 const cancelEditButton = document.getElementById("cancelEdit");
@@ -60,6 +61,57 @@ function showNotification(message) {
   }, 3000);
 }
 
+// SMART DEADLINE TRACKER HELPERS
+function getDaysUntilDeadline(dateString) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const deadline = new Date(dateString + "T00:00:00");
+  return Math.round((deadline - today) / 86400000);
+}
+
+function getDeadlineLabel(assignment) {
+  if (assignment.status === "Completed") {
+    return { text: "Completed", className: "deadline-completed" };
+  }
+
+  const days = getDaysUntilDeadline(assignment.dueDate);
+  if (days < 0) return { text: "Overdue by " + Math.abs(days) + (Math.abs(days) === 1 ? " day" : " days"), className: "deadline-overdue" };
+  if (days === 0) return { text: "Due today", className: "deadline-today" };
+  if (days <= 3) return { text: "Due in " + days + (days === 1 ? " day" : " days"), className: "deadline-soon" };
+  return { text: "Due in " + days + " days", className: "deadline-safe" };
+}
+
+function renderDeadlineOverview() {
+  if (!deadlineOverview) return;
+  deadlineOverview.innerHTML = "";
+
+  const upcoming = assignments
+    .filter(function (assignment) { return assignment.status !== "Completed"; })
+    .sort(function (a, b) { return a.dueDate.localeCompare(b.dueDate); })
+    .slice(0, 3);
+
+  if (upcoming.length === 0) {
+    const message = createTextElement("p", "No pending deadlines. You're all caught up!", "empty-message");
+    deadlineOverview.appendChild(message);
+    return;
+  }
+
+  upcoming.forEach(function (assignment) {
+    const item = document.createElement("div");
+    item.className = "deadline-item";
+    const title = createTextElement("h3", assignment.name);
+    const module = createTextElement("p", "Module: " + assignment.module);
+    const date = createTextElement("p", "Due: " + new Date(assignment.dueDate + "T00:00:00").toLocaleDateString("en-ZA"));
+    const labelInfo = getDeadlineLabel(assignment);
+    const label = createTextElement("span", labelInfo.text, "deadline-label " + labelInfo.className);
+    item.appendChild(title);
+    item.appendChild(module);
+    item.appendChild(date);
+    item.appendChild(label);
+    deadlineOverview.appendChild(item);
+  });
+}
+
 // 6. UPDATE DASHBOARD STATISTICS
 
 function updateStatistics() {
@@ -74,6 +126,7 @@ function updateStatistics() {
   totalAssignments.textContent = total;
   pendingAssignments.textContent = pending;
   completedAssignments.textContent = completed;
+  renderDeadlineOverview();
 }
 
 // 7. CREATE HTML ELEMENTS SAFELY
@@ -173,6 +226,14 @@ function displayAssignments() {
     badges.appendChild(priorityBadge);
 
     badges.appendChild(statusBadge);
+
+    const deadlineInfo = getDeadlineLabel(assignment);
+    const deadlineBadge = createTextElement(
+      "span",
+      deadlineInfo.text,
+      "badge deadline-label " + deadlineInfo.className,
+    );
+    badges.appendChild(deadlineBadge);
 
     // ADD INFORMATION TO CARD
 
