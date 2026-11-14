@@ -100,7 +100,18 @@ ASSIGNMENT Type:Portfolio of Evidence (POE) – Part 3
 Development:** HTML, CSS and JavaScript
 
 
-VISUAL CONTENT
+
+
+VISUAL CONTENT AND DEMONSTRATION
+VIDEO:
+
+
+https://github.com/user-attachments/assets/12b6c453-47ba-4365-bef7-5ee7b6953c3e
+
+
+
+
+PICTURES: 
 
 <img width="1080" height="656" alt="Screenshot 2026-11-14 230728" src="https://github.com/user-attachments/assets/9e11d7fb-ce79-4cd5-9abe-3e9fe5d3e41a" />
 
