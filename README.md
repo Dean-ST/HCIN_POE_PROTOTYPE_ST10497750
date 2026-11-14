@@ -98,3 +98,19 @@ Project:Student Assignment Planner
 MODULE :HCIN6222w  
 ASSIGNMENT Type:Portfolio of Evidence (POE) – Part 3  
 Development:** HTML, CSS and JavaScript
+
+
+VISUAL CONTENT
+
+<img width="1080" height="656" alt="Screenshot 2026-11-14 230728" src="https://github.com/user-attachments/assets/9e11d7fb-ce79-4cd5-9abe-3e9fe5d3e41a" />
+
+<img width="1042" height="447" alt="Screenshot 2026-11-14 225421" src="https://github.com/user-attachments/assets/2d640d7d-e0a2-4a07-8854-c9a2e591174f" />
+
+<img width="1044" height="657" alt="Screenshot 2026-11-14 225758" src="https://github.com/user-attachments/assets/eaa044ed-df6e-4755-a8cd-fd2585cba6d7" />
+<img width="1040" height="375" alt="Screenshot 2026-11-14 223506" src="https://github.com/user-attachments/assets/271999d9-8e64-4670-9104-b5eba6bf1215" />
+
+
+<img width="1052" height="382" alt="Screenshot 2026-11-14 223536" src="https://github.com/user-attachments/assets/1925bdf4-d513-4299-9401-1742f9aba919" />
+
+
+
